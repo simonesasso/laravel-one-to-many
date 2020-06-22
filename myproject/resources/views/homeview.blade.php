@@ -14,7 +14,8 @@
         <li>TITLE: {{$task["title"]}}</li>
         <li>DESCRIPTION: {{$task["description"]}}</li>
         <li>DEADLINE: {{$task["deadline"]}}</li>
-        <li>EMPLOYEE_ID: {{$task["employee_id"]}}</li>
+        <li>EMPLOYEE: {{$task -> employee -> first_name }} {{ $task -> employee -> last_name}}</li>
+        <li><a href="{{route("edit", $task["id"])}}">Edit task</a></li>
         <hr>
       @endforeach
 
