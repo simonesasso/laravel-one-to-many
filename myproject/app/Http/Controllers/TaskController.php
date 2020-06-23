@@ -10,8 +10,8 @@ class TaskController extends Controller
   public function index()
   {
     $tasks = Task::all();
-    $locations = Location::all();
-    return view("homeview", compact("tasks", "locations"));
+
+    return view("homeview", compact("tasks"));
   }
   public function edit($id)
   {
