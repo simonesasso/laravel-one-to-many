@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use App\Employee;
+use App\Location;
 class TaskController extends Controller
 {
   public function index()
@@ -17,8 +18,9 @@ class TaskController extends Controller
   {
     $task = Task::findOrFail($id);
     $employees = Employee::all();
+    $locations = Location::all();
 
-    return view("editview", compact("task","employees"));
+    return view("editview", compact("task","employees","locations"));
   }
   public function update(Request $request,$id)
   {

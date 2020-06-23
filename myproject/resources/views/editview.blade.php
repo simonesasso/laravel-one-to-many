@@ -33,6 +33,20 @@
       </select>
       <br><br>
 
+
+      @foreach ($locations as $location)
+        <label for="locations[]"><b>Street:</b> {{$location["street"]}}
+          <b>City:</b> {{$location["city"]}} <b>State:</b> {{$location["state"]}}</label>
+        <input type="checkbox" name="locations[]" value="{{$location["id"]}}"
+          @foreach ($task -> employee -> locations as $checkedLocation)
+            @if ($checkedLocation["id"] == $location["id"])
+              checked
+            @endif
+          @endforeach
+        ><br>
+      @endforeach
+
+
       <input type="submit" name="" value="Update">
 
 
