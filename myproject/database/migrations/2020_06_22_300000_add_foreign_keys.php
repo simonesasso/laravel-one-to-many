@@ -16,8 +16,16 @@ class AddForeignKeys extends Migration
       Schema::table('tasks', function (Blueprint $table) {
 
           // employee è ilnome che viene associato alla relazione
-          $table->foreign("employee_id", "employee")->references("id")->on("employees");
+          $table->foreign("employee_id", "employee")->references("id")->on("employees")->onDelete("cascade");
 
+
+
+      });
+      Schema::table('employee_location', function (Blueprint $table) {
+
+          // employee è ilnome che viene associato alla relazione
+          $table->foreign("employee_id", "employeeinlocation")->references("id")->on("employees")->onDelete("cascade");
+          $table->foreign("location_id", "location")->references("id")->on("locations")->onDelete("cascade");
 
 
       });
@@ -35,6 +43,13 @@ class AddForeignKeys extends Migration
           // employee è ilnome che viene associato alla relazione
           $table->dropForeign("employee");
 
+
+
+      });
+      Schema::table('employee_location', function (Blueprint $table) {
+
+          $table->dropForeign("employee");
+          $table->dropForeign("location");
 
 
       });
