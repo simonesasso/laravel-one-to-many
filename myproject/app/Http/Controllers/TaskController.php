@@ -28,11 +28,12 @@ class TaskController extends Controller
       "title" => "required",
       "description" => "required",
       "deadline" => "required|date",
-      "employee_id" => "required"
+      "employee_id" => "required",
+      // "locations" => "required|array"
     ]);
 
+    // dd($validatedData);
     Task::whereId($id)->update($validatedData);
-
     return redirect()->route("home");
   }
 }
