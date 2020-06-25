@@ -35,7 +35,7 @@ class EmployeeController extends Controller
       "last_name" => "required",
       "date_of_birth" => "required|date",
       "role" => "required",
-      "locations" => "required|array"
+      "locations" => "nullable|array"
     ]);
 
     $employee = Employee::findOrFail($id);
@@ -45,8 +45,13 @@ class EmployeeController extends Controller
     $employee["date_of_birth"] = $validatedData["date_of_birth"];
     $employee["role"] = $validatedData["role"];
     $employee -> save();
-    
-    $employee -> locations() -> sync($validatedData["locations"]) ;
+
+    if (!array_key_exists("locations",$validatedData)) {
+      $employee -> locations() -> sync([]);
+    }else {
+      $employee -> locations() -> sync($validatedData["locations"]);
+    }
+
 
     return redirect()->route("home");
   }
