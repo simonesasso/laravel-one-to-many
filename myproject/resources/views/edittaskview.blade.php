@@ -5,8 +5,8 @@
         @method("POST")
         @csrf
 
-        <label for="title">TITLE:</label>
-        <input type="text" name="title" value="{{$task["title"]}}">
+        <label for="name">TITLE:</label>
+        <input type="text" name="name" value="{{$task["name"]}}">
         <br><br>
 
         <label for="description">DESCRIPTION:</label>
@@ -24,7 +24,7 @@
         <select name="employee_id">
           @foreach ($employees as $employee)
             <option value="{{$employee["id"]}}"
-            @if ($employee["id"] == $task -> employee -> id)
+            @if ($employee["id"] == $task["employee_id"])
               selected
             @endif
             >{{$employee["first_name"]}} {{$employee["last_name"]}}</option>

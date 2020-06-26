@@ -10,7 +10,7 @@
         <h4>Tasks:</h4>
         <ul>
           @foreach ($employee -> tasks as $task)
-            <li><a href="{{route("showtask", $task["id"])}}">{{$task["title"]}}</a></li>
+            <li><a href="{{route("showtask", $task["id"])}}">{{$task["name"]}}</a></li>
           @endforeach
         </ul>
     @else

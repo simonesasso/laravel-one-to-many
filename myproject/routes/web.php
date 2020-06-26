@@ -19,6 +19,7 @@ Route::get('/show/{id}', "EmployeeController@show")->name("show");
 Route::get('/edit/{id}', "EmployeeController@edit")->name("edit");
 Route::post('/update/{id}', "EmployeeController@update")->name("update");
 
+Route::get('/indextasks', "TaskController@indextasks")->name("indextasks");
 Route::get('/showtask/{id}', "TaskController@showtask")->name("showtask");
 
 Route::get('/edittask/{id}', "TaskController@edittask")->name("edittask");

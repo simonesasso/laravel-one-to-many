@@ -15,4 +15,5 @@
       @endforeach
 
     </ul>
+    <a href="{{route("indextasks")}}">SEE ALL TASKS</a>
 @endsection
