@@ -6,19 +6,19 @@
       @method("POST")
       @csrf
 
-      <label for="title">FIRST_NAME:</label>
+      <label for="first_name">FIRST_NAME:</label>
       <input type="text" name="first_name" value="{{$employee["first_name"]}}">
       <br><br>
 
-      <label for="description">LAST_NAME:</label>
+      <label for="last_name">LAST_NAME:</label>
       <input type="text" name="last_name" value="{{$employee["last_name"]}}">
       <br><br>
 
-      <label for="deadline">DATE_OF_BIRTH:</label>
+      <label for="date_of_birth">DATE_OF_BIRTH:</label>
       <input type="text" name="date_of_birth" value="{{$employee["date_of_birth"]}}">
       <br><br>
 
-      <label for="deadline">ROLE:</label>
+      <label for="role">ROLE:</label>
       <input type="text" name="role" value="{{$employee["role"]}}">
       <br><br>
 
